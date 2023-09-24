@@ -291,3 +291,21 @@
   new PureCounter();
 
 })()
+
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbwZ_CpIKDKNTokoZzfLphn0VzFllEDNPXJHGeWHCN1p3aasZ7AAsTEi-qSgJ7-HBwi6-Q/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Form submitted successfully")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
